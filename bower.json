@@ -18,6 +18,9 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.4.1"
+    "angular": "~1.4.1",
+    "jquery": "~2.1.4",
+    "oauth-js": "~0.4.3",
+    "bootstrap": "~3.3.5"
   }
 }
