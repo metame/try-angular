@@ -1,18 +1,50 @@
 <!DOCTYPE html>
 <html ng-app="littleSketcher">
+<head>
+    <script type="text/ng-template" id="tpl/index.html">
+        <h1>Hello from index</h1>
+        
+        <a href="#drawings/new">Create Drawing</a>
+        <a href="#drawings">List Drawing</a>
+
+    </script>
+    
+    <script type="text/ng-template" id="tpl/drawings.html">
+        <div class="row" ng-controller=drawingListCtrl>
+            
+            <h1>Drawings</h1>
+            
+            <a href="#">Home</a>
+            
+            <button ng-click="addDrawing()">Add Drawing</button>
+            
+            <ul class="drawings">
+                <li class="note" ng-hide="drawings[0]">No drawings yet, get drawing!</li>
+                <li ng-repeat="drawing in drawings" class="drawing">
+                    <span>{{ drawing.name }}</span><button ng-click="remove(drawing)">Remove</button>
+                </li>
+            </ul>
+            
+        </div>
+    </script>
+    
+    <script type="text/ng-template" id="tpl/drawing_create.html">
+        <div class="row" ng-controller=drawingListCtrl>
+            
+            <div class=row>
+                <h1 toggle-input="drawing.name">
+                    {{ drawing.name }}
+                </h1>
+                <a href="#">Home</a>
+           </div>
+            
+        </div>
+    </script>
+</head>
 <body style='font-family: sans-serif'>
     
-    <div class="row" ng-controller=drawingListCtrl>
-        
-        <h1>Drawings</h1>
-        <button ng-click="addDrawing()">Add Drawing</button>
-        
-        <ul class="drawings">
-            <li class="note" ng-hide="drawings[0]">No drawings yet, get drawing!</li>
-            <li ng-repeat="drawing in drawings" class="drawing">
-                <span>{{ drawing.name }}</span><button ng-click="remove(drawing)">Remove</button>
-            </li>
-        </ul>
+    
+    <div ng-view>
         
     </div>
     
@@ -26,6 +58,7 @@
     
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

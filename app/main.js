@@ -1,8 +1,33 @@
-var app = angular.module('littleSketcher',["ngResource"]);
+var app = angular.module('littleSketcher',["ngResource", "ngRoute"]);
+
+app.config(function($routeProvider){
+    $routeProvider.when('/', {
+        templateUrl: "tpl/index.html",
+        controller: "rootCtrl"
+    })
+    .when('/drawings', {
+        templateUrl: "tpl/drawings.html",
+        controller: "drawingListCtrl"
+    })
+    .when('/drawings/new', {
+        templateUrl: "tpl/drawings_create.html",
+        controller: "drawingCreateCtrl"
+    })
+    .when('/drawings/:id', {
+        templateUrl: "tpl/drawings_create.html",
+        controller: "drawingCreateCtrl"
+    });
+});
 
 app.factory('DrawingResource', function($resource){
     var DrawingResource = $resource("/api/drawings/:id",{id: "@id"});
     return DrawingResource;
+});
+
+app.controller('drawingCreateCtrl', function($scope){
+   $scope.drawing = {
+    name: "new drawing"
+  } 
 });
 
 app.controller('drawingListCtrl', function($scope, DrawingResource){
