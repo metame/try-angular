@@ -1,0 +1,14 @@
+<!doctype html>
+<html ng-app>
+    <head>
+        <meta charset="utf-8">
+        <title>Two way data binding</title>
+    </head>
+    
+    <body ng-init="fbID='michaeljameserwin'">
+        <input type="text" ng-model="fbID" />
+        <br/>
+        <span><img ng-src="https://graph.facebook.com/{{fbID}}/picture?type=normal"/></span>
+        <script src="/bower_components/angular/angular.js"></script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "try-angular",
+  "version": "1.0.0",
+  "authors": [
+    "Michael J Erwin <michaeljameserwin@gmail.com>"
+  ],
+  "description": "\"Learning, Testing, Developing Angular.js\"",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "michaeljerwin.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.1"
+  }
+}

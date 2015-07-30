@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang='en' ng-app='myApp'>
+    <head>
+        <title>Finance Meter</title>
+    </head>
+    <body ng-controller="FinanceController">
+        Your Salary?
+        <input type="text" ng-model="salary">
+        <br/> How much should you invest in gadgets?
+        <input type="text" ng-model="percentage">%
+        <br/>The amount to be spent in shopping will be:
+            <span ng-bind="result() | currency"></span>
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="app.js"></script>
+        <script src="controllers.js"></script>
+    </body>
+</html>
